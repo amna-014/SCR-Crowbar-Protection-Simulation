@@ -12,17 +12,17 @@ This project focuses on the **Circuit Design and Simulation** of a Crowbar Circu
 While the physical prototype verified the concept, this repository documents the **Theoretical Validation** and **Threshold Analysis**. Using **NI Multisim**, we modeled the transient response of a Zener-triggered SCR system to ensure it isolates the load before damage occurs.
 
 ## Circuit Design Parameters
-The design was calculated to protect a 14.4Ω Load (Bulb) from voltages exceeding 7.5V.
+[cite_start]The design was calculated to protect a 14.4Ω Load (Bulb) from voltages exceeding 7.5V[cite: 393, 410].
 
 | Component | Selected Value | Design Rationale |
 | :--- | :--- | :--- |
-| **Zener Diode** | 7.5V | Sets the precise breakdown voltage for the trigger. |
-| **Thyristor (SCR)** | C106D (4A Max) | Chosen to handle the short-circuit surge current (>1A). |
-| **Fuse** | 1 Amp | Selected to blow immediately when SCR shorts the rail. |
-| **Pull-Down Resistor** | 1 kΩ | Prevents false triggering of the Gate pin. |
+| **Zener Diode** | 7.5V | [cite_start]Sets the precise breakdown voltage for the trigger[cite: 395]. |
+| **Thyristor (SCR)** | C106D (4A Max) | [cite_start]Chosen to handle the short-circuit surge current (>1A)[cite: 404]. |
+| **Fuse** | 1 Amp | [cite_start]Selected to blow immediately when SCR shorts the rail[cite: 387]. |
+| **Pull-Down Resistor** | 1 kΩ | [cite_start]Prevents false triggering of the Gate pin[cite: 406]. |
 
 ## Simulation Analysis (Multisim)
-The circuit was simulated under three voltage conditions to verify the "Crowbar" effect.
+[cite_start]The circuit was simulated under three voltage conditions to verify the "Crowbar" effect[cite: 413, 426].
 
 ### 1. Normal Operation (< 7.5V)
 * **Input:** 5V DC
@@ -35,11 +35,15 @@ The circuit was simulated under three voltage conditions to verify the "Crowbar"
 * **Result:** SCR latches ON, creating a low-impedance path to Ground.
 
 ### Simulation Screenshots
-!(https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/normal%20condition.jpg?raw=true) (https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%201.jpg?raw=true) (https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%202.jpg?raw=true)
-*Figure : Multisim results showing Voltage Drop across the load falling to near-zero (0.27V) during a fault condition.*
+| Normal Condition | Fault Condition (Before Fuse) | Fault Condition (Safe State) |
+| :---: | :---: | :---: |
+| ![Normal](https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/normal%20condition.jpg?raw=true) | ![Overvoltage 1](https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%201.jpg?raw=true) | ![Overvoltage 2](https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%202.jpg?raw=true) |
+| *Input: 5V (System Active)* | *Input: 10V (SCR Triggered)* | *Fuse Blown (Load 0V)* |
+
+> [cite_start]*Figure 1: Multisim results showing Voltage Drop across the load falling to near-zero (0.27V) during a fault condition[cite: 472].*
 
 ## Threshold Verification Results
-Based on simulation and hardware comparison:
+[cite_start]Based on simulation and hardware comparison[cite: 427]:
 
 | Input Voltage ($V_{in}$) | Fuse Status | Load State |
 | :--- | :--- | :--- |
@@ -47,7 +51,7 @@ Based on simulation and hardware comparison:
 | **5.0 V** | Intact | ON (Protected) |
 | **7.2 V** | **BLOWN** | **OFF (Safe)** |
 
-> *"The simulation confirmed that the C106D SCR successfully shunts the current within milliseconds, protecting the 14.4Ω load from high-voltage transients."*
+> [cite_start]*"The simulation confirmed that the C106D SCR successfully shunts the current within milliseconds, protecting the 14.4Ω load from high-voltage transients[cite: 477]."*
 
 ## Project Team
 This project was a collaborative effort for the **Power Electronics** module.
