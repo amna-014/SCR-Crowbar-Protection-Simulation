@@ -35,7 +35,7 @@ The circuit was simulated under three voltage conditions to verify the "Crowbar"
 * **Result:** SCR latches ON, creating a low-impedance path to Ground.
 
 ### Simulation Screenshots
-!(https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/normal%20condition.jpg?raw=true)(https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%201.jpg?raw=true)(https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%202.jpg?raw=true)
+!(https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/normal%20condition.jpg?raw=true) (https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%201.jpg?raw=true) (https://github.com/amna-014/SCR-Crowbar-Protection-Simulation/blob/main/overvoltage%20condition%202.jpg?raw=true)
 *Figure : Multisim results showing Voltage Drop across the load falling to near-zero (0.27V) during a fault condition.*
 
 ## Threshold Verification Results
